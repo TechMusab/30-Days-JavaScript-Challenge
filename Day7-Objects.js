@@ -22,10 +22,10 @@ console.log(book.title);
 console.log(book.author);
 //Object Methods
 book.mymethod();
-book.year=function(year){
+book.setyear=function(year){
     this.year=year;
 }
-book.year(2011);
+book.setyear(2011);
 console.log(book.year);
 //Nested Objects
 let library={
