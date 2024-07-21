@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .element2 {
+            height: 70px;
+            width: 70px;
+            margin: 10px 0;
+        }
+
+        .myimg {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .myclass {
+            border-radius: 30%;
+        }
+        .element2{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #element{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="element">
+
+    </div>
+    <button class="mybtn">
+        Click Me!
+    </button>
+    <div class="element2">
+
+    </div>
+    <ul>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ul>
+    <img class="myimg" src="" alt="">
+    <script>
+        //Selecting and Manipulating elements
+        document.querySelector("#element").innerHTML = "HelloWorld!"
+        let element2 = document.querySelector(".element2");
+        element2.style.backgroundColor = "red";
+        //Creating and Appending elements
+        var newElement = document.createElement("div");
+        newElement.innerHTML = "HelloWorld!";
+        document.querySelector("body").appendChild(newElement);
+        var newli = document.createElement("li");
+        newli.innerHTML = "Item4";
+        document.querySelector("ul").appendChild(newli);
+        //Removing elements
+        document.querySelector("ul").removeChild(document.querySelector("li"));
+        let myul = document.querySelector("ul");
+        if (myul.lastElementChild) {
+            myul.removeChild(myul.lastElementChild);
+        }
+        //Modyfying attribute and classes
+        document.querySelector(".myimg").src = "1.jpg"
+        element2.classList.add("myclass");
+        //Event listener
+        let btn=document.querySelector(".mybtn")
+        btn.addEventListener("click", function () {
+            element2.innerHTML="BOX";
+        });
+        btn.addEventListener('mouseover', function () {
+            element2.style.border = '2px solid black';
+        });
+        btn.addEventListener('mouseleave', function () {
+            element2.style.border = 'none';
+        });
+    </script>
+</body>
+
+</html>
