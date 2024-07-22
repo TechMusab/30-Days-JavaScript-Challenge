@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10</title>
+    <style>
+     
+        .wrapper {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+        }
+
+        .active {
+            opacity: 0;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: green;
+            border: none;
+            outline: none;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .change {
+            margin-top: 20px;
+
+        }
+
+        .change p {
+            border-radius: 10px;
+            display: inline;
+            background-color: rgb(0, 0, 0);
+            padding: 10px;
+            color: white;
+        }
+
+        .myinput {
+            padding: 10px;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="wrapper">
+            <p class="para">
+                paragraph
+            </p>
+            <button class="button">
+                Click Me!
+            </button>
+        </div>
+        <img src="./1.jpg" alt="image">
+        <div class="change">
+            <p>Mouse Over and change my color</p>
+        </div>
+
+
+        <input class="myinput" type="text">
+        <form id="simpleForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br><br>
+            <label for="color">Favorite Color:</label>
+            <select id="color" name="color" required>
+                <option value="" disabled selected>Select your color</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="yellow">Yellow</option>
+            </select>
+            <br><br>
+            <button type="submit">Submit</button>
+
+
+
+            <ul id="itemList">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
+            <button id="addItem">Add Item</button>
+    </div>
+    <script>
+        //Basic Event Handlers
+        let btn = document.querySelector('.button');
+        let para = document.querySelector(".para");
+        btn.addEventListener("click", () => {
+            para.innerHTML = "I am clicked";
+        })
+        let image = document.querySelector("img");
+        image.addEventListener("dblclick", () => {
+            image.classList.toggle("active");
+        })
+        //Mouse Events
+        let content = document.querySelector(".change p");
+        content.addEventListener("mouseover", () => {
+            content.style.backgroundColor = "green";
+        })
+        content.addEventListener("mouseout", () => {
+            content.style.backgroundColor = "black";
+        })
+        //keyboard Events
+        let input = document.querySelector("input");
+        input.addEventListener("keydown", (event) => {
+            console.log(event.key);
+        })
+        input.addEventListener("keyup", () => {
+            input.value = para.innerHTML;
+        })
+        //form events
+        let form = document.querySelector("form");
+        let inputs = document.querySelectorAll("form input");
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            inputs.forEach(input => console.log(input.value));
+        });
+        let select = document.querySelector("select");
+        select.addEventListener("change", () => {
+            console.log(select.value);
+        })
+        //Event Delegation
+        let ul = document.querySelector("#itemList");
+        ul.addEventListener("click", (event) => {
+            console.log(event.target.innerHTML);
+        })
+        document.getElementById('addItem').addEventListener('click', () => {
+            const newItem = document.createElement('li');
+            newItem.textContent = `Item ${itemList.children.length + 1}`;
+            itemList.appendChild(newItem);
+        });
+    </script>
+</body>
+
+</html>
