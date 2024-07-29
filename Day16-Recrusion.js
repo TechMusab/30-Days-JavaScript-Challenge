@@ -96,3 +96,20 @@ function occurences(arr,number,count=0){
 }
 let array4=[1,1,2,1];
 console.log(occurences(array4,1));
+function binaryserch(arr,s,e,k){
+  if(s>e){
+    return false;
+  }
+  let mid =  Math.floor((e + s) / 2);
+  if(arr[mid]==k){
+    return true;
+  }
+  if(k>arr[mid]){
+   return binaryserch(arr,mid+1,e,k)
+  }
+  else{
+   return binaryserch(arr,s,mid-1,k);
+  }
+}
+let array5=[1,2,4,6,7];
+console.log(binaryserch(array5,0,array5.length-1,6));
