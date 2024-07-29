@@ -56,3 +56,43 @@ function reversestring(s){
     return s.charAt(s.length-1)+ reversestring(s.slice(0, -1));
 }
 reversestring("musab");
+function checkplaindrome(s,i,j){
+  if(i>j){
+    return true;
+  }
+  if(s.charAt(i)!==s.charAt(j)){
+    return false;
+  }
+  else{
+   return checkplaindrome(s,i+1,j-1);
+  }
+
+}
+let s="abbccbba";
+let isplaindrome=checkplaindrome(s,0,s.length-1);
+console.log(isplaindrome);
+function checknumber(arr,number,index=0){
+  if(arr.length==index){
+    return false;
+  }
+  if(number==arr[index]){
+    return arr.indexOf(number);
+  }
+  else{
+    return checknumber(arr,number,index+1);
+  }
+
+}
+let array3=[1,65,3,6];
+console.log(checknumber(array3,3));
+function occurences(arr,number,count=0){
+  if(arr.length==0){
+    return 0;
+  }
+  if(number==arr[0]){
+    count=count+1;
+  }
+    return count+occurences(arr.slice(1),number);
+}
+let array4=[1,1,2,1];
+console.log(occurences(array4,1));
