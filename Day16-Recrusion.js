@@ -25,10 +25,34 @@ function home(src, dest) {
   return home(src + 1, dest);
 }
 home(1, 10);
-function saydigits(n){
-    if (n == 0) {
+function sum(arr){
+if(arr.length==0){
+    return 0;
+}
+let current=arr[0];
+let remain=arr.slice(1);
+return current+sum(remain);
+}
+let array = [1,45,56];
+function maxi(arr){
+if(arr.length==0){
+    return 0;
+}
+let max=arr[0]>maxi(arr.slice(1))?arr[0]:maxi(arr.slice(1))
+return max;
+}
+let array2 = [67,767,182];
+console.log(maxi(array2))
+function reversestring(s){
+    if(s.length==0){
         return;
     }
-    saydigits()
+    return s.charAt(s.length-1)+ reversestring(s.slice(0, -1));
 }
-console.log(saydigits(106));
+function reversestring(s){
+    if(s.length==0){
+        return;
+    }
+    return s.charAt(s.length-1)+ reversestring(s.slice(0, -1));
+}
+reversestring("musab");
