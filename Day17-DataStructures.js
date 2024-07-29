@@ -170,12 +170,74 @@ class queue {
 // console.log(q.dequeue());
 // console.log(q.dequeue());
 // console.log(q.isEmpty());
-function printer(jobs){
-  let q=new queue();
-  jobs.forEach(job=>q.enqueue(job));
-while(!q.isEmpty()){
-  console.log("Processed Job: "+q.dequeue());
+// function printer(jobs){
+//   let q=new queue();
+//   jobs.forEach(job=>q.enqueue(job));
+// while(!q.isEmpty()){
+//   console.log("Processed Job: "+q.dequeue());
+// }
+// }
+// const jobs = ["Job1", "Job2", "Job3", "Job4"];
+// printer(jobs);
+
+
+
+class Treenode{
+  constructor(data){
+    this.data=data;
+    this.left=null;
+    this.right=null;
+  }
+}
+class BinaryTree{
+  constructor(){
+    this.root=null;
+  }
+  insertnode(data){
+    const node=new Treenode(data);
+
+    if(this.root==null){
+      this.root=node;
+      return;
+    }
+    let current=this.root;
+    while(true){
+
+    if(node.data<current.data){
+      if(current.left==null){
+       current.left=node;
+       break;
+      }
+      else{
+        current=current.left;
+      }
+    }
+    else{
+      if(current.right==null){
+        current.right=node;
+        break;
+      }
+      else{
+        current=current.right;
+      }
+    }
+  }
+}
+
+
+
+inordertraversel(root){
+  if(root==null){
+    return;
+  }
+  this.inordertraversel(root.left)
+  console.log(root.data," ");
+  this.inordertraversel(root.right)
 }
 }
-const jobs = ["Job1", "Job2", "Job3", "Job4"];
-printer(jobs);
+let b=new BinaryTree();
+b.insertnode(6);
+b.insertnode(4);
+b.insertnode(9);
+b.insertnode(1);
+b.inordertraversel(b.root);
