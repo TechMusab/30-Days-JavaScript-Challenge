@@ -117,7 +117,7 @@ function occrunces(s, c) {
 }
 let count = occrunces("Musabb", "b");
 console.log(count);
-function longest(s) {
+function longestsubstring(s) {
   let start = 0;
   let ends = 0;
   let max = 0;
@@ -127,12 +127,34 @@ function longest(s) {
       set.add(s.charAt(ends));
       max = Math.max(max, set.size);
       ends++;
-    }
-    else{
-        set.delete(s.charAt(start));
-        start++;
+    } else {
+      set.delete(s.charAt(start));
+      start++;
     }
   }
   return max;
 }
-console.log(longest("GeeksforGeeks"));
+console.log(longestsubstring("GeeksforGeeks"));
+function rotatearray(array, k) {
+  k = k % array.length;
+  let newarray = [];
+  for (let i = 0; i < k; i++) {
+    newarray.push(array.shift());
+  }
+ array.push(newarray);
+  newarray= array.flat();
+   console.log(newarray);
+}
+let array6 = [2, 4, 2, 3, 4, 4];
+rotatearray(array6, 10);
+function mergearrays(array,array2) {
+  let mergedArray = array.concat(array2);
+  mergedArray.sort((a, b) => a - b);
+  return mergedArray;
+
+}
+let array7 = [1,2,3,4,5,6,9,10];
+let array8 = [7,8];
+let newarray=mergearrays(array7,array8);
+console.log(newarray);
+
