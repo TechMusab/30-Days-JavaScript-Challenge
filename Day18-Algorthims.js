@@ -157,4 +157,3 @@ let array7 = [1,2,3,4,5,6,9,10];
 let array8 = [7,8];
 let newarray=mergearrays(array7,array8);
 console.log(newarray);
-
