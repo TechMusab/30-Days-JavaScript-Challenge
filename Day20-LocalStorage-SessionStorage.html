@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <input class="name" type="text">
+        <input class="myemail" type="email">
+        <button>Save to Local Storage</button>
+    </form>
+    <script>
+                                   //Understanding Local Storage
+        // localStorage.setItem("item", "item");
+        // console.log(localStorage.getItem("item"));
+        let obj = {
+            name: "musab",
+            age: 18,
+        }
+        // localStorage.setItem("object", JSON.stringify(obj));
+        // console.log(JSON.parse(localStorage.getItem("object")));
+
+        const inputname = document.querySelector(".name");
+        const email = document.querySelector(".myemail");
+
+        // document.querySelector("form").addEventListener("submit", (e) => {
+        //     e.preventDefault();
+        //     localStorage.setItem("name", inputname.value);
+        //     localStorage.setItem("email", email.value);
+        // })
+        // inputname.value = localStorage.getItem("name");
+        // email.value = localStorage.getItem("email");
+        // console.log(inputname.value);
+        // console.log(email.value);
+        // localStorage.removeItem("name");
+        // console.log(inputname.value);
+        // console.log(email.value);
+                                   //understanding session storage
+        //    sessionStorage.setItem("item", "item");
+        //   console.log( sessionStorage.getItem("item"));
+        //   sessionStorage.setItem("object", JSON.stringify(obj));
+        //     console.log(JSON.parse(sessionStorage.getItem("object")));
+        //      document.querySelector("form").addEventListener("submit", (e) => {
+        //         e.preventDefault();
+        //        sessionStorage.setItem("name", inputname.value);
+        //        sessionStorage.setItem("email", email.value);
+        //     })
+        //     inputname.value = sessionStorage.getItem("name");
+        //     email.value = sessionStorage.getItem("email");
+        //     console.log(inputname.value);
+        //     console.log(email.value);
+        //     sessionStorage.removeItem("name");
+        //     console.log(inputname.value);
+        //     console.log(email.value);
+                             //Comparing Session Storage and localStorage
+        function save(key, value) {
+            localStorage.setItem(key, value);
+            sessionStorage.setItem(key, value);
+        }
+        save("age", "18");
+        function get(key) {
+            console.log(localStorage.getItem(key));
+            console.log(sessionStorage.getItem(key));
+        }
+        get("age");
+        function cleardata(){
+            localStorage.clear();
+            sessionStorage.clear();
+        }
+        cleardata();
+    </script>
+</body>
+
+</html>
