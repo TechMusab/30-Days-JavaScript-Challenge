@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main{
+    position: relative;
+}
+
+.top{
+    width: 100vw;
+    height: 50vh;
+    background-color: black;
+}
+.bottom{
+    width: 100vw;
+    height: 50vh;
+    background-color: rgb(128, 107, 5);
+}
+.inputcontainer{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 90vh;
+    width: 40vw;
+    background-color: rgb(36, 42, 42);
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+.search{
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+input{
+    color: white;
+    background-color: transparent;
+    width: 400px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 2px solid white;
+}
+.btn{
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    background-color: rgb(129, 106, 13);
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+}
+.btn:hover{
+    background-color: rgb(229, 88, 0);
+}
+.inputcontainer .result{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    opacity: 0;
+}
+.inputcontainer .result .mycontent{
+    height: 70%;
+    width:100%;
+    display: flex;
+   justify-content: space-around;
+    align-items: center;
+
+}
+.result .mycontent img{
+width: 200px;
+height: 220px;
+border-radius: 10px;
+}
+.result .content{
+display: flex;
+flex-direction:column;
+justify-content: center;
+width: 40%;
+gap: 20px;
+}
+.result .mycontent .content h2{
+    font-size: 1rem;
+    color: white;
+}
+.result .mycontent .content p{
+    font-size: 1rem;
+    color: white;
+}
+h2{
+    color: white;
+}
+.showmore{
+    padding: 15px;
+    background-color: rgb(229, 88, 0);
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:10px;
+    border: none;
+    cursor: pointer;
+}
+.showmore:hover{
+    background-color: rgb(255, 0, 0);
+}
+.morecontent{
+    margin: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+}
+.morecontent h1{
+    font-size:1.3rem;
+    display: none;
+}
