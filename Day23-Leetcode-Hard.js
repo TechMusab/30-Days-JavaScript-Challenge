@@ -93,7 +93,7 @@ var trap = function (height) {
   for (let i = 0; i < height.length - 1; i++) {
     let leftmax = 0;
     let rightmax = 0;
-    for (let j = i + 1; j < height.length ; j++) {
+    for (let j = i + 1; j < height.length; j++) {
       if (height[j] > height[i]) {
         rightmax = height[j];
       }
@@ -105,11 +105,76 @@ var trap = function (height) {
     }
     console.log(leftmax, rightmax);
     if (height[i] < leftmax && height[i] < rightmax) {
-     
       total += Math.min(leftmax, rightmax) - height[i];
     }
-  
   }
   return total;
 };
-console.log(trap([4,2,0,3,2,5]));
+console.log(trap([4, 2, 0, 3, 2, 5]));
+var solveNQueens = function (n) {
+  if (n === 1) {
+    return [["Q"]];
+  }
+  
+  let col = new Set();
+  let postdiag = new Set();
+  let prevdiag = new Set();
+  const board = Array.from(Array(n), () => new Array(n).fill("."));
+  let result = [];
+
+  const isValid = (r, c) =>
+    !(col.has(c) || postdiag.has(r + c) || prevdiag.has(r - c));
+
+  const Add = (r, c) => {
+    col.add(c);
+    postdiag.add(r + c);
+    prevdiag.add(r - c);
+    board[r][c] = "Q";
+  };
+
+  const Remove = (r, c) => {
+    col.delete(c);
+    postdiag.delete(r + c);
+    prevdiag.delete(r - c);
+    board[r][c] = ".";
+  };
+
+  function Main(row) {
+    if (row == n) {
+      result.push(board.map((row) => row.join("")));
+      return;
+    }
+
+    for (let j = 0; j < n; j++) {
+      if (isValid(row, j)) {
+        Add(row, j);
+        Main(row + 1);
+        Remove(row, j);
+      }
+    }
+  }
+
+  Main(0);
+  return result;
+};
+var ladderLength = function(beginWord, endWord, wordList) {
+  let set= new Set(wordList);
+  let queue=[[beginWord,1]];
+  while(queue.length){
+      let [current,count]=queue.shift();
+      if(current==endWord){
+          return count;
+      }
+      for(let i=0;i<26;i++){
+          for(j=0;j<current.length;j++){
+              let letter=String.fromCharCode(97+i);
+              let word=current.slice(0,j)+letter+current.slice(j+1)
+              if(set.has(word)){
+                  queue.push([word,count+1])
+                  set.delete(word);
+              }
+          }
+      }
+  }
+  return 0;
+};
