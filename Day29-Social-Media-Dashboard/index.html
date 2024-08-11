@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Social MEdia Dashboard</title>
+    <title>Social Media Dashboard</title>
 </head>
+
 <body>
-    
+    <header class="top">
+        My Social Media Dashboard
+    </header>
+    <div class="dashboard">
+        <div class="create-post">
+            <h2>Create a Post</h2>
+            <form id="postForm">
+                <textarea id="postContent" placeholder="What's on your mind?" rows="4"></textarea>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+        <div class="posts-container">
+            <h2>Posts</h2>
+            <div class="post">
+                <div class="post-header">
+                    <img src="../1.jpg" alt="User Avatar" class="avatar">
+                    <div class="user-info">
+                        <h3 class="username">John Doe</h3>
+                        <p class="timestamp">2 hours ago</p>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>This is a sample post content. It can be text, images, or any other media.</p>
+                </div>
+                <div class="post-actions">
+                    <button class="like-btn">Like</button>
+                    <button class="comment-btn">Comment</button>
+                    <button class="share-btn">Share</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <script src="script.js"></script>
 </body>
+
 </html>
