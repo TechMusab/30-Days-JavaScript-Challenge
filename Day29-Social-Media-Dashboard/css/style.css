@@ -57,6 +57,11 @@
 .create-post button:hover {
   background-color: #0056b3;
 }
+.posts-containe{
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
 .posts-container h2 {
   font-size: 2em;
   color: #333;
@@ -77,6 +82,8 @@
 .posts-container .post {
   border-bottom: 1px solid #ccc;
   padding: 15px 0;
+  padding: 2rem;
+  border-radius: 10px;
 }
 
 .post-header {
@@ -104,10 +111,13 @@
   font-size: 0.9em;
   color: #777;
 }
-
 .post-content p {
   margin: 10px 0;
   font-size: 1em;
+}
+.post-actions{
+  display: flex;
+  gap: 1rem;
 }
 
 .post-actions button {
@@ -121,4 +131,18 @@
 
 .post-actions button:hover {
   text-decoration: underline;
+}
+.myposts{
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+.comment{
+  padding: 5px 10px;
+  margin:1rem;
+  background: transparent;
+  color: white;
+}
+.comment::placeholder{
+  color: black;
+  color: rgb(60, 102, 25);
 }
