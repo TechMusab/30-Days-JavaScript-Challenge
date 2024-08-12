@@ -57,7 +57,7 @@
 .create-post button:hover {
   background-color: #0056b3;
 }
-.posts-containe{
+.posts-container{
   display: flex;
   flex-direction: column;
   gap: 3rem;
