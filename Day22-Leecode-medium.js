@@ -119,3 +119,7 @@
 
 // };
 // console.log(groupAnagrams(["eat","tea","tan","ate","nat","bat"]));
+let obj={
+    nam:"Musab"
+}
+console.log(Object.values(obj));
